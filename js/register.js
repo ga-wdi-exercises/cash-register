@@ -1,11 +1,12 @@
 function Register() {
-  this.initialize = function(container) {
-    this.el = $('<div class="register">');
-    $(container).append(this.el);
-    this.total = 0;
-    this.render();
-  };
 }
+
+Register.prototype.initialize = function(container) {
+  this.el = $('<div class="register">');
+  $(container).append(this.el);
+  this.total = 0;
+  this.render();
+};
 
 Register.prototype.render = function() {
   var templateString = '<div class="ticket">' +
