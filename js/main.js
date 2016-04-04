@@ -1,5 +1,2 @@
-var myRegister = new Register();
-myRegister.initialize($("#r1"));
-
-var myRegister2 = new Register();
-myRegister2.initialize($("#r2"));
+// instantiate a new register
+// initialize it with a div that's on the existing HTML page
