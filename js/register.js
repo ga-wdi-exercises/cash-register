@@ -33,9 +33,9 @@ Register.prototype.render = function() {
 Register.prototype.update = function() {
   event.preventDefault();
 
-  var inputBox = this.el.find($(".newEntry"));
-  var entries  = this.el.find($(".entries"));
-  var totalEl  = this.el.find($(".total"));
+  var inputBox = this.el.find(".newEntry");
+  var entries  = this.el.find(".entries");
+  var totalEl  = this.el.find(".total");
 
   // get the amount and clear the box
   var amount = parseFloat(inputBox.val());
