@@ -1,9 +1,21 @@
-var entries = $("#entries");
+function Register(){
+  this.domElement = null;
+}
+
+Register.prototype.initialize = function(containerEl) {
+  
+};
+
+Register.prototype.render = function(){
+
+};
+
+var entries = $(".entries");
 
 var form = $("form");
-var inputBox = $("#newEntry");
+var inputBox = $(".newEntry");
 
-var totalEl = $("#total");
+var totalEl = $(".total");
 var total = 0.00;
 
 form.on("submit", updateRegister);
