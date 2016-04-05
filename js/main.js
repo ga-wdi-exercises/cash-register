@@ -1,26 +1,26 @@
+// adapt variable definitions below to be encapsulated in the correct object
+
+var entries = $(".entries");
+var form = $("form");
+var inputBox = $(".newEntry");
+var totalEl = $(".total");
+form.on("submit", updateRegister);
+
 function Register(){
   this.domElement = null;
+  var total = 0.00;
 }
 
 Register.prototype.initialize = function(containerEl) {
-  
+
 };
 
 Register.prototype.render = function(){
 
 };
 
-var entries = $(".entries");
-
-var form = $("form");
-var inputBox = $(".newEntry");
-
-var totalEl = $(".total");
-var total = 0.00;
-
-form.on("submit", updateRegister);
-
-function updateRegister() {
+//non-functional. convert DOM selection method to find
+Register.prototype.update = function(){
   event.preventDefault();
 
   // get the amount and clear the box
@@ -37,4 +37,4 @@ function updateRegister() {
   // update the total
   total = total + amount;
   totalEl.text("$" + total.toFixed(2));
-}
+};
