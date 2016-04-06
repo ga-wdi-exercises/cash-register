@@ -1,8 +1,13 @@
 function Register() {
+  this.domElement = null;
   this.initialize = function(container) {
     // create an el for this instance
     // append it to the provided container
     // set initial attributes (just total)
+    this.initialize = function(container) {
+    this.domElement = $('<div class="$ "></div>');
+    container.append(this.domElement);
+    this.total = "";
   };
 }
 
@@ -28,8 +33,23 @@ Register.prototype.render = function() {
   // add any event listeners
 };
 
+this.domElement.html(templateString);
+this.domElement.find(".ticket").text("");
+
+var button = this.domElement.find("button");
+button.on("click", this.update.bind(this));
+};
+
 Register.prototype.update = function() {
   event.preventDefault();
   var inputBox = this.el.find($(".newEntry"));
-  
+
 };
+
+var hello = new Register();
+hello.initialize($("#r1"));
+hello.render("This is a test!");
+
+var goodbye = new Register();
+hello.initialize($("#r2"));
+hello.render("This is a test again!");
