@@ -1,4 +1,5 @@
 //this is what i did for homework but they said that the master origin and my documents are identical.
+
 function Register() {
   this.domElement = null;
   this.initialize = function(container) {
