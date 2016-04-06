@@ -12,7 +12,7 @@ function Register() {
 }
 
 Register.prototype.render = function() {
-  var templateString = '<div class="ticket">' +
+  var reen templateString = '<div class="ticket">' +
 		'<h1>Thank You!</h1>' +
 		'<table>' +
 			'<tbody class="entries">' +
