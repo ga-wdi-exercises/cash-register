@@ -1,20 +1,18 @@
-//this is what i did for homework but they said that the master origin and my documents are identical.
-
 function Register() {
   this.domElement = null;
-  this.initialize = function(container) {
     // create an el for this instance
     // append it to the provided container
     // set initial attributes (just total)
-    this.initialize = function(container) {
-    this.domElement = $('<div class="$ "></div>');
+  this.initialize = function(container) {
+    console.log(container)
+    this.domElement = $('<div class="register"></div>');
     container.append(this.domElement);
     this.total = "";
   };
 }
 
 Register.prototype.render = function() {
-  var reen templateString = '<div class="ticket">' +
+  var templateString = '<div class="ticket">' +
 		'<h1>Thank You!</h1>' +
 		'<table>' +
 			'<tbody class="entries">' +
@@ -33,13 +31,12 @@ Register.prototype.render = function() {
 
   // insert content into `el`
   // add any event listeners
-};
 
-this.domElement.html(templateString);
-this.domElement.find(".ticket").text("");
 
-var button = this.domElement.find("button");
-button.on("click", this.update.bind(this));
+  this.domElement.html(templateString);
+  // this.domElement.find(".ticket").text("");
+
+
 };
 
 Register.prototype.update = function() {
@@ -50,8 +47,8 @@ Register.prototype.update = function() {
 
 var hello = new Register();
 hello.initialize($("#r1"));
-hello.render("This is a test!");
+hello.render();
 
 var goodbye = new Register();
 hello.initialize($("#r2"));
-hello.render("This is a test again!");
+hello.render();
