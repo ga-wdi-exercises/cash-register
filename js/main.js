@@ -8,4 +8,9 @@ $(document).ready(function() {
 		}
 		$("input#newEntry").val("");
 	})
+	$("#clear").on("click", function() {
+		$("input#newEntry").val("");
+		$("#total").html("$0.00");
+		$("#entries").html("")
+	})
 })
