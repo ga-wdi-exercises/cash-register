@@ -4,13 +4,14 @@ $( document ).ready(function() {
   var $entries = $("#entries");
   var total = 0;
   var $tbody = $('tbody');
+  var input;
 
   $form.on("submit", cashRegisterIt);
 
   function cashRegisterIt(e) {
     e.preventDefault();
     var $amount = $("#newEntry").val();
-    var $amountToInteger = parseInt($amount);
+    var $amountToInteger = parseFloat($amount);
     total += $amountToInteger;
     $entries.append("<tr><td></td><td> $<span class='entry'>" + ($amountToInteger.toFixed(2)) + "</span><a href='#'>x</a></td></tr>");
     var $totalText = $("#total");
@@ -34,6 +35,9 @@ $( document ).ready(function() {
 
     $tbody.on('blur','input',function() {
         $(this).text($(this).val());
+        // total -= input.val();
+        console.log(input);
+        $totalText.html("$" + (total.toFixed(2)));
     });
 
     $("input").val("");
