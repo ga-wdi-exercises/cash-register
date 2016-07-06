@@ -17,19 +17,17 @@ $(document).ready(function(){
     //  get current total
     var total = $("#total").html();
     var numericTotal = parseFloat(total.split("$")[1]);
-    var actualTotal = floatAmount + numericTotal;
+    var actualTotal = parseFloat(floatAmount) + numericTotal;
 
-    //var balance = parseInt($(actualTotal).val() + $(amount).val());
-    //$("#total").val(balance);
+    //actualTotal = Math.round(actualTotal * 1e2);
+    
+    //actualTotal = actualTotal.toFixed(2);
+
+    $("#total").html("$"+ actualTotal.toFixed(2));
 
     //if (isNaN(balance)) {
     //  balance = 0;
     //}
-
-
-
-
-    console.log(balance);
 
     $("input#newEntry").val("")
   })
