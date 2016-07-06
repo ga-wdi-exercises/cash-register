@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log("I'm ready");
   // listen for form submission
   $("#entry").on("submit", function(evt){
     // prevent default action
@@ -15,14 +14,14 @@ $(document).ready(function(){
     newRow.append($("<td>" + floatAmount + "</td>"))
     $("#entries").append(newRow)
     // update total
-      //  get current total
+    //  get current total
     var total = $("#total").html()
     var numericTotal = parseFloat(total.split("$")[1])
-    var actualTotal = floatAmount + numericTotal
-    console.log();
+    var actualTotal = parseFloat(floatAmount) + numericTotal
+    $("#total").html("$" + actualTotal.toFixed(2));
     $("input#newEntry").val("")
   })
 
-    // make sure dollar signs are there
+  // make sure dollar signs are there
 
 })
