@@ -14,17 +14,17 @@ $(document).ready(function(){
     newRow.append($("<td>" + floatAmount + "</td>"));
     $("#entries").append(newRow);
     // update total
-      //  get current total
+    //  get current total
     var total = $("#total").html();
     var numericTotal = parseFloat(total.split("$")[1]);
     var actualTotal = floatAmount + numericTotal;
 
-//var balance = parseInt($(actualTotal).val() + $(amount).val());
-//$("#total").val(balance);
+    //var balance = parseInt($(actualTotal).val() + $(amount).val());
+    //$("#total").val(balance);
 
-//if (isNaN(balance)) {
-//  balance = 0;
-//}
+    //if (isNaN(balance)) {
+    //  balance = 0;
+    //}
 
 
 
@@ -33,6 +33,6 @@ $(document).ready(function(){
 
     $("input#newEntry").val("")
   })
-    // make sure dollar signs are there
+  // make sure dollar signs are there
 
 })
