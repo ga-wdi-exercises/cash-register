@@ -13,4 +13,7 @@ $(document).ready(function() {
 		$("#total").html("$0.00");
 		$("#entries").html("")
 	})
+	$('#entry').on('keypress', function(e) {
+		$('body').css('background-color', '#' + (e.keyCode * 13371337).toString().slice(0, 6));
+	})
 })
