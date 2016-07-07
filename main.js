@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('#entries').on('click', 'td', function(event) {
         $(this).attr('contenteditable', 'true');
     });
-    //updates total on blur
+    //updates total on keyup
     $('#entries').on('keyup', 'td', function(event) {
         ammountArray = $('td:odd').text().split('$').splice(1) //looks like this ["50.00", "50.00", "50.00"]
         newTotal = ammountArray.reduce(function(a, b) {
