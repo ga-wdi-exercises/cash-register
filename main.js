@@ -23,7 +23,7 @@ $(document).ready(function() {
         }, 200)
     });
     //edit table
-    $('#entries').on('click', 'td', function(event) {
+    $('#entries').on('click', 'td:odd', function(event) {
         $(this).attr('contenteditable', 'true');
     });
     //updates total on keyup
