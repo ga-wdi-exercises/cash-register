@@ -17,10 +17,10 @@ $(document).ready(function() {
         currentTotal = parseFloat($('#total').html().split('$')[1]).toFixed(2)
         $('#total').html('$' + (parseFloat(currentTotal)-parseFloat(removedPrice)).toFixed(2));
         $(this).closest('tr').remove()
-        $('body').css('background', '#cc0000');
+        $('body').css('background', '#660000');
         setTimeout(function(){
             $('body').css('background', '#001a66')
-        }, 1000)
+        }, 200)
     });
     //edit table
     $('#entries').on('click', 'td', function(event) {
