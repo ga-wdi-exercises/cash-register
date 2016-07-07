@@ -2,19 +2,19 @@ $(document).ready(function() {
     //basic homework
     $('#entry').on('submit', function(event) {
         event.preventDefault();
-        newPrice = parseFloat($('#newEntry').val()).toFixed(2)
+        var newPrice = parseFloat($('#newEntry').val()).toFixed(2)
         if(!isNaN(newPrice)){
             $('#entries').append('<tr><td><a href="#" class="close">x</a></td><td>$' + newPrice + '</td></tr>')
-            oldTotal = parseFloat($('#total').html().split('$')[1])
+            var oldTotal = parseFloat($('#total').html().split('$')[1])
             $('#total').html('$'+ (parseFloat(newPrice) + oldTotal).toFixed(2));
             $('#entry')[0].reset();
         }
     })
     //remove table lines
     $('#entries').on('click',"a", function(event) {
-        target = $(event.target)
-        removedPrice = parseFloat($(target).closest('td').next().html().split('$')[1]).toFixed(2)
-        currentTotal = parseFloat($('#total').html().split('$')[1]).toFixed(2)
+        var target = $(event.target)
+        var removedPrice = parseFloat($(target).closest('td').next().html().split('$')[1]).toFixed(2)
+        var currentTotal = parseFloat($('#total').html().split('$')[1]).toFixed(2)
         $('#total').html('$' + (parseFloat(currentTotal)-parseFloat(removedPrice)).toFixed(2));
         $(this).closest('tr').remove()
         $('body').css('background', '#660000');
@@ -28,8 +28,8 @@ $(document).ready(function() {
     });
     //updates total on keyup
     $('#entries').on('keyup', 'td', function(event) {
-        ammountArray = $('td:odd').text().split('$').splice(1) //looks like this ["50.00", "50.00", "50.00"]
-        newTotal = ammountArray.reduce(function(a, b) {
+        var ammountArray = $('td:odd').text().split('$').splice(1) //looks like this ["50.00", "50.00", "50.00"]
+        var newTotal = ammountArray.reduce(function(a, b) {
             return parseFloat(a) + parseFloat(b);
         }, 0);
         $('#total').html('$' + newTotal.toFixed(2))
