@@ -4,7 +4,7 @@ $(document).ready(function() {
         event.preventDefault();
         newPrice = parseFloat($('#newEntry').val()).toFixed(2)
         if(!isNaN(newPrice)){
-            $('#entries').append('<tr><td><a href="#" class="close">x</a></td><td>$'+ newPrice + '</td></tr>')
+            $('#entries').append('<tr><td><a href="#" class="close">x</a></td><td>$' + newPrice + '</td></tr>')
             oldTotal = parseFloat($('#total').html().split('$')[1])
             $('#total').html('$'+ (parseFloat(newPrice) + oldTotal).toFixed(2));
             $('#entry')[0].reset();
@@ -17,6 +17,10 @@ $(document).ready(function() {
         currentTotal = parseFloat($('#total').html().split('$')[1]).toFixed(2)
         $('#total').html('$' + (parseFloat(currentTotal)-parseFloat(removedPrice)).toFixed(2));
         $(this).closest('tr').remove()
+        $('body').css('background', '#cc0000');
+        setTimeout(function(){
+            $('body').css('background', '#001a66')
+        }, 1000)
     });
     //edit table
     $('#entries').on('click', 'td', function(event) {
