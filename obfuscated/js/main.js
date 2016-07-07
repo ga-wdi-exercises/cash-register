@@ -1,2 +1,39 @@
-eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('1 e=0.3("o");e.n("a",a);1 8=0.3(\'8\');m a(h){h.q();1 5=0.3(\'f\');5=6(5.l).i(2);1 7=0.b("p");1 k=0.b("j");1 9=0.b("j");9.d=5;7.c(k);7.c(9);8.c(7);0.3(\'f\').l=\'\';4=6(0.3(\'4\').d.r(/\\$|,/g,\'\'));4=4+6(5);0.3(\'4\').d="$"+6(4).i(2)}',28,28,'document|var||getElementById|total|val|parseFloat|row|entries|valCell|submit|createElement|appendChild|innerHTML|form|newEntry||event|toFixed|td|cell|value|function|addEventListener|entry|tr|preventDefault|replace'.split('|'),0,{}))
+$(document).ready(function(){
+//Gets the doc ready for JQuery to load
+console.log("JQ is working");
+$("#entry").on("submit", function(evt){
+//("#entry") = submission field, our selector
+//.on = an action, connecting it to "submit"
+//submit = whenever something is submitted in the submission field, a function will take place.
+//function = the WHOLE CODE; what we are putting in to work
+//evt= whenever this event happens, create a function
+evt.preventDefault()
+//.preventDefault()
+  var amount = $("#newEntry").val()
+  var floatAmount = parseFloat(amount).toFixed(2)
+  //console.log(typeof(floatAmount));
+  var newRow = $("<tr></tr>")
+  newRow.append($("<td><td>"))
+  newRow.append($("<td>" + floatAmount +
+"</td>"))
+  $("#entries").append(newRow)
+  floatAmount = parseFloat(floatAmount)
+  //console.log(floatAmount, typeof(floatAmount));
 
+  var total = $("#total").html().split("$")[1]
+  console.log(total, typeof(total));
+  total = parseFloat(total);
+  console.log(total, typeof(total));
+
+  actualTotal = total + floatAmount;
+  console.log(actualTotal, typeof(actualTotal));
+  $("#total").html("$" + actualTotal.toFixed(2))
+  $("input").val("")
+  //place user input in table
+    //One tr containting 2 td's, final td has amount
+  })
+});
+//add the input to table
+  //make sure 2 decimal places
+//update total
+//make sure dollar signs are there
