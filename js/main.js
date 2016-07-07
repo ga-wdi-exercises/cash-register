@@ -7,31 +7,35 @@ $(document).ready(function() {
     //get user input && convert to float with two decimal places
     evt.preventDefault()
     var amount = $("#newEntry").val()
-    var floatAmount = parseFloat(amount).toFixed(2)
+    var floatAmount = parseFloat(amount)
     console.log(floatAmount);
     // place user input in table
     //One tr, containging 2 td's, final td has amount
     var newRow = $("<tr></tr>")
     newRow.append($("<td></td>"))
-    newRow.append($("<td>" + floatAmount + "</td>"))
+    newRow.append($("<td>" + "$" + floatAmount + "</td>"))
     $("#entries").append(newRow)
 
 
     var total = $("#total").html()
     var numericTotal = parseFloat(total.split("$")[1])
     var actualTotal = floatAmount + numericTotal;
-    var fixParse = parseFloat(floatAmount + actualTotal)
+
     console.log("new entry working");
     $("input#newEntry").val("")
+     $("#newEntry").val("")
 
+//Some of my thoughts on how to make work
     //  var newTotal = $("<tfoot></tfoot>")
     //   total.append($("<th></th>"))
     //   total.append($("<th>" + actualTotal + "</th>"))
-
-
     // ("<th>" + actualTotal + "</th>")
 
-    $("#total").html(actualTotal).total
+ actualTotal = actualTotal.toFixed(2);
+ $("#total").html("$" + actualTotal);
+
+
+
 
 
   });
