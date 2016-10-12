@@ -32,7 +32,7 @@ var total = 0;
 
     $( "#entries tr" ).each(function( ) {
       //Put the button next to the transaction
-      $(this).children().first().html("<input type='submit' id='stuff' value='Delete Entries'>");
+      $(this).children().first().html("<input type='submit' id='stuff' value='Delete Entry'>");
 
       //var number = $( this ).text(); //figure out if you can pull the number with .text - yes, need to convert to #
       //console.log(Number(number));
@@ -45,7 +45,7 @@ var total = 0;
       evt.preventDefault();
       //Delete Total
       var numHolder = $(this).parent().next().text(); //'#entries tr td'
-      console.log(numHolder);
+      
       total -= Number(numHolder);
       //Update Total field
       $('#total').html("$" + total + ".00");
