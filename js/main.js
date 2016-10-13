@@ -16,7 +16,7 @@ $("#entry").on("submit", function(evt){
     console.log("error")} else {
 totalAmount = amount + totalAmount;
 $("tbody").append("<tr><td></td><td>" + amount + "</td></tr>")
-$("#total").html(totalAmount);
+$("#total").html("$" + totalAmount);
 $("#newEntry").val(null);}
 
 
