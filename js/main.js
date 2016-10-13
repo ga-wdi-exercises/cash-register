@@ -7,7 +7,7 @@ $("#entry").on("submit", function(evt){
     var amount = $("#newEntry").val();
     total += Number(amount); //adds to the input number
     $("#total").html("$" + total);
-    $("#entries").append("<tr><td></td><td>" + amount +".00 </td></tr>");
+    $("#entries").append("<tr><td></td><td>" + "$"+ amount +".00 </td></tr>");
     //adds table row!
     console.log(amount);
   });
