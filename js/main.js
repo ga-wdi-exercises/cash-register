@@ -5,9 +5,10 @@ var total = [0];
 $("#entry").on("submit", function(evt){
     evt.preventDefault();
     var amount = $("#newEntry").val();
-    total += amount;
-    $("#total").html(total);
-    $("#entry").on("reset");
+    total += Number(amount); //adds to the input number
+    $("#total").html("$" + total);
+    $("#entries").append("<tr><td></td><td>" + amount +".00 </td></tr>");
+    //adds table row!
     console.log(amount);
   });
 
