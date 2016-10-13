@@ -11,24 +11,19 @@ $("#entry").on("submit", function(evt){
   //prevent the default action
   evt.preventDefault();
 // capture user input
-  var amount = parseInt($("#newEntry").val());
+  var amount = Number($("#newEntry").val());
   if (isNaN(amount)){
     console.log("error")} else {
 totalAmount = amount + totalAmount;
-$("tbody").append("<tr><td></td><td>" + amount + "</td></tr>")
-$("#total").html("$" + totalAmount);
+$("tbody").append("<tr><td></td><td>" + amount.toFixed(2) + "</td></tr>")
+$("#total").html("$" + totalAmount.toFixed(2));
 $("#newEntry").val(null);}
-
 
 
 // } else {
 //   console.log("error")
 // }
 ;
-
-
-
-
 
 
 })
