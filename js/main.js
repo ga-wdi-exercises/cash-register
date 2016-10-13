@@ -1,20 +1,24 @@
 $(document).ready(function(){
-  //initialize total variable to zero
-  var total = 0
-//listen for form submission
+//stores form submission
 var entry = $("#entry");
+var total = 0;
 entry.on("submit", function(evt){
-  //prevent the default application
+  //prevents default refresh
   evt.preventDefault();
-  //capture user input
-  var amount = parseFloat($("input").val());
-  console.log(typeof amount);
-//add item prices to list
+//   //stores user input to var amount
+  var amount = Number($("input").val());
+  //adds amount value to total variable
+    total += amount;
+    //displays new total in #total div
+  $("#total").html("$" + total.toFixed(2));
+  //adds item prices to list
   $("#entries").append("<tr><td></td><td>" +amount.toFixed(2)+ "</td></tr>");
-//clear input field after entry
-  total =+ amount;
-  $("#total").html(total);
+  //clear input field after entry
   $("input").val("");
-  return total;
+  // test cases
+  // console.log(amount);
+  // console.log(typeof amount);
+  // console.log(total);
+  // return;
 });
 })
