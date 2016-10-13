@@ -31,6 +31,10 @@ body {
 #ticket th {
 	text-align: left;
 }
+#entries {
+	text-align: right;
+}
+
 #ticket td, #ticket #total {
 	text-align: right;
 }
